@@ -5,6 +5,8 @@ source ("mainplot.R");
 plot3 <- function(name="plot3.png", ...){
         pic <- function(data, ...){
                 doplot3(data);
+                legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+                       lty=1, col=c('black', 'red','blue'), cex=.75)
         }
         mainplot(pic, name);
         name;
@@ -20,8 +22,5 @@ doplot3 <- function(data, ...){
         
         with(data, points(data$"Time", data$"Sub_metering_3",  xlab="",  ylab="", pch=".", col="Blue"));
         lines(data$"Time", data$"Sub_metering_3", col="Blue");
-        
-        legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
-               lty=1, col=c('black', 'red','blue'), cex=.75)
         
 }

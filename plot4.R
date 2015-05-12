@@ -18,10 +18,13 @@ plot4 <- function(name="plot4.png", ...){
                 
                 ##3
                 doplot3(data);
+                legend('topright', c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), 
+                       lty=1, col=c('black', 'red','blue'), cex=.75, bty="n")
                 
                 ##4
                 plot(data$"Time", data$"Global_reactive_power", pch=".", xlab="datetime");
                 lines(data$"Time", data$"Global_reactive_power");
+                
                 
         }
         mainplot(pic, name);
